@@ -1,0 +1,29 @@
+[build-system]
+requires = [
+    "setuptools", 
+    "setuptools_scm",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "energyplus-datasets"
+dynamic = ["version"]
+description = "EnergyPlus Datasets"
+readme = "README.md"
+license = {file = "LICENSE.txt"}
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["packages"]
+namespaces = true
+
+[tool.setuptools.package-data]
+energyplus = [
+    "dataset/basic/assets/*/**"
+]
+
+[tool.setuptools_scm]
+version_scheme = "no-guess-dev"
